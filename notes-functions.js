@@ -10,5 +10,10 @@ const loadNotes =()=>{
   }catch(e){
       return []
   }
+}
 
+//Save new note
+const saveNote =(note)=>{
+    const dataJSON = JSON.stringify(note);
+    fs.writeFileSync('notes.json',dataJSON)
 }
