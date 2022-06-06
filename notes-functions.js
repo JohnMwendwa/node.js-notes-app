@@ -49,7 +49,7 @@ const removeNote =(title)=>{
     const notes = loadNotes();
     const remainingNotes = notes.filter(note=>note.title !== title);   
     if(notes > remainingNotes){
-        saveNote(notes);
+        saveNote(remainingNotes);
         console.log(success('Note removed successfully!'))
     }else{
         console.log(error('No such title exits'))
