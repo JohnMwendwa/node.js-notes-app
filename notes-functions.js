@@ -39,3 +39,15 @@ const listNotes =()=>{
     console.log('Your Notes')
     notes.forEach(note=>console.log(note.title))
 }
+
+const removeNote =(title)=>{
+    const notes = loadNotes();
+    const remainingNotes = notes.filter(note=>note.title !== title);   
+    if(notes > remainingNotes){
+        saveNote(notes);
+        console.log('Note removed successfully!')
+    }else{
+        console.log('No such title exits')
+    }
+}
+
