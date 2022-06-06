@@ -15,5 +15,12 @@ const argv = yargs(hideBin(process.argv))
         }
     },(argv)=>addNote(argv.title,argv.body))
     .command('list','List all notes',()=>listNotes())
+    .command('remove',"Remove a note",{
+        title:{
+            describe:"note title",
+            demand:true,
+            type:'string'
+        }
+    },(argv)=>removeNote(argv.title))
     .help()
     .argv
