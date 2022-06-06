@@ -9,6 +9,7 @@
   "author": "John Mwendwa",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "yargs": "^17.5.1"
   }
 }
