@@ -39,12 +39,26 @@ const addNote = (title,body)=>{
     }
 }
 
+//Read the contents of a note
+const readNote =(title)=>{
+    const notes = loadNotes();
+    const foundNote = notes.find(note=> note.title === title);
+    if(foundNote){
+        console.log(chalk.underline(foundNote.title));
+        console.log(foundNote.body);
+    }else{
+        console.log(error('No such note exists!'))
+    }
+}
+
+// List all notes
 const listNotes =()=>{
     const notes = loadNotes();
     console.log(chalk.underline('Your Notes'));
     notes.forEach(note=>console.log(note.title))
 }
 
+// Remove a note 
 const removeNote =(title)=>{
     const notes = loadNotes();
     const remainingNotes = notes.filter(note=>note.title !== title);   
@@ -56,8 +70,10 @@ const removeNote =(title)=>{
     }
 }
 
+// Export the functions to be consumed in other files
 module.exports = {
     addNote,
+    readNote,
     listNotes,
     removeNote,   
 }
