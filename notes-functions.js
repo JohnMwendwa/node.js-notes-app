@@ -51,3 +51,8 @@ const removeNote =(title)=>{
     }
 }
 
+module.exports = {
+    addNote,
+    listNotes,
+    removeNote,   
+}
