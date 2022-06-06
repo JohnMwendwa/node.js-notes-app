@@ -33,3 +33,9 @@ const addNote = (title,body)=>{
         console.log('New note saved!!!')
     }
 }
+
+const listNotes =()=>{
+    const notes = loadNotes();
+    console.log('Your Notes')
+    notes.forEach(note=>console.log(note.title))
+}
