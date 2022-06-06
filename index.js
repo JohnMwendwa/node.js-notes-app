@@ -14,5 +14,6 @@ const argv = yargs(hideBin(process.argv))
             type:'string'
         }
     },(argv)=>addNote(argv.title,argv.body))
+    .command('list','List all notes',()=>listNotes())
     .help()
     .argv
